@@ -16,7 +16,7 @@
                 @endif
 
                 <div class="flex justify-end mb-4">
-                    <a href="{{ route('courses.create') }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    <a href="{{ route('courses.create') }}" class="inline-flex items-center px-6 py-3 bg-indigo-600 border border-transparent rounded-lg font-medium text-sm text-white uppercase tracking-wide shadow-md hover:bg-indigo-700 active:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 transition duration-150">
                         Crear Nuevo Curso
                     </a>
                 </div>
@@ -40,14 +40,14 @@
                                         {{ $course->instructor }}
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                        <a href="{{ route('courses.edit', $course) }}" class="text-indigo-600 hover:text-indigo-900 mr-4">Editar</a>
+                                        <a href="{{ route('courses.edit', $course) }}" class="inline-flex items-center px-4 py-2 bg-white border border-indigo-600 rounded-md font-medium text-sm text-indigo-600 uppercase tracking-wide shadow-sm hover:bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 mr-4">
+                                            Editar
+                                        </a>
 
                                         <form action="{{ route('courses.destroy', $course) }}" method="POST" class="inline">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="text-red-600 hover:text-red-900" onclick="return confirm('¿Estás seguro?')">
-                                                Eliminar
-                                            </button>
+                                            <x-danger-button onclick="return confirm('¿Estás seguro?')">Eliminar</x-danger-button>
                                         </form>
                                     </td>
                                 </tr>
