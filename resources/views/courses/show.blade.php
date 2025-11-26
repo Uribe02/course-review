@@ -1,8 +1,3 @@
-@php
-    // Usaremos esto para el guest layout si es necesario
-    use Illuminate\Support\Facades\Auth; 
-@endphp
-
 <x-guest-layout>
     <div class="py-12 bg-gray-50">
         <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
@@ -51,6 +46,7 @@
                             </x-primary-button>
                         </form>
                     </div>
+
                 @endauth 
 
                 @guest
@@ -81,7 +77,6 @@
                         <p class="text-gray-500 italic">Sé el primero en dejar una reseña.</p>
                     @endforelse
                 </div>
-
             </div>
         </div>
     </div>

@@ -35,6 +35,10 @@
             <div class="mt-10 flex justify-center">
                 {{ $courses->links() }}
             </div>
+
+            @if ($courses->isEmpty())
+                <p class="text-center text-gray-500 mt-8">No hay cursos publicados aún.</p>
+            @endif
         </div>
     </div>
 </x-guest-layout>
