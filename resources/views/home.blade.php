@@ -9,6 +9,25 @@
                 Plataforma de Reseñas de Cursos
             </h1>
 
+            <!-- Auth controls on home page -->
+            <div class="flex justify-center mb-8">
+                @guest
+                    <a href="{{ route('login') }}" class="inline-flex items-center px-4 py-2 mr-4 bg-white border border-gray-300 rounded-md font-medium text-sm text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2">
+                        Iniciar sesión
+                    </a>
+
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}" class="inline-flex items-center px-6 py-3 bg-indigo-600 border border-transparent rounded-lg font-medium text-sm text-white uppercase tracking-wide shadow-md hover:bg-indigo-700 active:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2">
+                            Registrarse
+                        </a>
+                    @endif
+                @else
+                    <a href="{{ route('dashboard') }}" class="inline-flex items-center px-6 py-3 bg-indigo-600 border border-transparent rounded-lg font-medium text-sm text-white uppercase tracking-wide shadow-md hover:bg-indigo-700">
+                        Ir al Dashboard
+                    </a>
+                @endguest
+            </div>
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 @foreach ($courses as $course)
                     <div class="bg-white overflow-hidden shadow-lg rounded-lg border border-gray-100 transition duration-300 hover:shadow-xl">
