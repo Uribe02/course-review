@@ -5,7 +5,7 @@
 
                 <h1 class="text-4xl font-extrabold text-indigo-700 mb-4">{{ $course->title }}</h1>
                 <p class="text-gray-600 mb-6 text-lg">
-                    **Instructor:** {{ $course->instructor }}
+                    Instructor: {{ $course->instructor }}
                 </p>
 
                 <div class="prose max-w-none text-gray-700 mb-8 border-t pt-4">

@@ -23,10 +23,8 @@ Route::get('/curso/{course:slug}', [PublicCourseController::class, 'show'])->nam
 // 🔐 RUTAS PROTEGIDAS (AUTENTICACIÓN) - MÓDULO 2 & 4
 // ==========================================================
 
-// Dashboard base de Breeze (Sintaxis estándar)
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Dashboard base: mostrar listado de cursos de administración
+Route::get('/dashboard', [CourseController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     // Rutas de Perfil (Breeze)
